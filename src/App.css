@@ -11,7 +11,7 @@
   :root{
     /* colors */
     --par-tree: #e8e7e7;
-    --root-node: #eebf93;
+    --root-node: #ff6565;
     --root-listItem: #ffffff;
     --div-null: #7da8e8;
     --div-negative: #b1ead5;
@@ -20,5 +20,5 @@
     /* border and box-shadow */
     --border: 1px solid #000;
     --border-hover: 2px solid #000;
-    --shadow: 0 0 5px -1px black;
+    --shadow: 0 0 5px -1px #000;
   }

@@ -11,7 +11,7 @@ const nestedNodes = (userData) => {
         let conditional_class = "";
         let conditional_border = "";
         switch (item.Test_Result) {
-          case 0:
+          case "Unknown":
             conditional_class = "not_tested";
             break;
           case "Negative":
@@ -42,10 +42,8 @@ const nestedNodes = (userData) => {
           // check the key porp
           <li key={index}>
             <div className={`${conditional_class} ${conditional_border}`}>
-              <p>{item.Index_client_Code}</p>
-              {/* {test && <p>Name</p>} */}
+              <p>{item.Contact_code}</p>
             </div>
-            {/* {console.log(item)} */}
             {item.nodes && item.nodes.length ? nestedNodes(item.nodes) : ""}
           </li>
         );

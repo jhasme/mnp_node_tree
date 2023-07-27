@@ -3,18 +3,7 @@ import "./App.css";
 import "./components/RenderTree/renderTree.css";
 import { getData } from "./components/handleApi/api";
 import RenderTree from "./components/RenderTree/RenderTree";
-
-/*  
-    Status legend:
-    Not tested: 0,
-    Tested and -ve: 1,
-    Tested and +ve: 2
-*/
-
-/*  
-    If the node continuation stops propogating for all nodes that show negative test result, then there is no need to pull edge data for those records.
-*/
-
+import Legends from "./components/Legend/Legends";
 
 const App = () => {
   const [userData, setUserData] = useState([]);
@@ -32,12 +21,17 @@ const App = () => {
   useEffect(() => {
     // the below getData function is to handle api is declared in "api.jsx" file
     getData(setUserData).then((res) => {
-      setUserData(res.data);
+      setUserData(res.data.users);
     });
     firstNode();
   }, []);
 
-  return <RenderTree userData={userData} />;
+  return (
+    <>
+      <Legends />
+      <RenderTree userData={userData} />;
+    </>
+  );
 };
 
 export default App;

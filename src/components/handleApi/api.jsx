@@ -7,12 +7,11 @@ export const getData = async () => {
     const res = await axios.get(baseURL, {
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*", 
-        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS", 
-        "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token, http, https", 
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token",
       },
     });
-    console.log(res);
     return res;
   } catch (err) {
     console.log(err.message);
